@@ -1,0 +1,36 @@
+{% extends 'memory_base.html' %}
+
+{% block app_content %}
+    <table>
+        <tr>
+            <tH>Prompt</th>
+            <tH>Training Status</th>
+            <tH>Recall Duration (days)</th>
+            <tH>Next Recall</th>
+            <tH>Last Recall</th>
+            <tH>Last Recall Outcome</th>
+            <tH>Recall Count </th>
+            <tH>Failed Recall Count</th>
+            <tH>Partial Recall Count</th>
+            <tH>Perfect Recall Count</th>
+        </tr>
+        {% for memory in memories %}
+            <tr>
+                <td>{{ memory.prompt }}</td>
+                <td>{{ memory.training_status }}</td>
+                <td>{{ memory.recall_duration_days }}</td>
+                <td>{{ memory.next_recall_at }}</td>
+                <td>{{ memory.last_recall_at }}</td>
+                <td>{{ memory.last_recall_outcome }}</td>
+                <td>{{ memory.total_recall_count }}</td>
+                <td>{{ memory.failed_recall_count }}</td>
+                <td>{{ memory.partial_recall_count }}</td>
+                <td>{{ memory.perfect_recall_count }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

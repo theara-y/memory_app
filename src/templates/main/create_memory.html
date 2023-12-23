@@ -1,0 +1,19 @@
+{% extends 'memory_base.html' %}
+
+{% block app_content %}
+    <form method="post">
+        {{ form.hidden_tag() }}
+
+        {{ form.prompt }}
+
+        {{ form.answer }}
+
+        {{ form.training_status() }}
+
+        <button>Create</button>
+    </form>
+{% endblock %}
+
+{% block scripts %}
+    <script src="static/js/index.js"></script>
+{% endblock %}

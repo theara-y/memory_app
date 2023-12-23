@@ -1,0 +1,13 @@
+{% extends 'desktop.html' %}
+
+{% block window %}
+<div id="window">
+    <div id="window-bar">
+        <a id="close-window-btn" href="/"></a>
+    </div>
+    <div id="window-content">
+        {% block window_content %}
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}

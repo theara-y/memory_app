@@ -1,0 +1,34 @@
+{% extends 'memory_base.html' %}
+
+{% block app_content %}
+<table>
+  <tr>
+    <th>Prompt</th>
+    <th>Answer</th>
+  </tr>
+  {% for memory in memories %}
+  <tr data-id="{{ memory.id }}">
+    <td>{{ memory.prompt }}</td>
+    <td>
+      <button class="show-ans-btn">Click to Show</button>
+      <div class="hidden-group">
+        <span>{{ memory.answer }}</span>
+        <div class="report-outcome-btns">
+          <button class="perfect-recall-btn" data-outcome="perfect">Perfect Recall</button>
+          <button class="partial-recall-btn" data-outcome="partial">Partial Recall</button>
+          <button class="failed-recall-btn" data-outcome="failed">Failed Recall</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="static/css/test_memory.css" type="text/css">
+{% endblock %}
+
+{% block scripts %}
+<script src="static/js/test_memory.js"></script>
+{% endblock %}

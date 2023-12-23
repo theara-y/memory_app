@@ -1,0 +1,37 @@
+body, h1, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  /* Navbar styles */
+  nav {
+    background-color: #333; /* Background color */
+    padding: 10px; /* Padding for spacing */
+  }
+
+  ul {
+    list-style-type: none; /* Remove list bullets */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Clear floats */
+  }
+
+  li {
+    float: left; /* Float list items horizontally */
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: #555; /* Hover color */
+  }

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="header">
+  <h1><a href="/">Memory App</a></h1>
+</div>
+
+<div class="main">
+  <h2>Sign up for Memory App</h2>
+  <div class="form-container">
+    <form class="form-box" method="post">
+      {{ form.hidden_tag() }}
+
+      <div class="form-group">
+        {{form.email.label}}
+        {{ form.email() }}
+        {% for error in form.email.errors %}
+        <span class="input-error">{{ error }}</span>
+        {% endfor %}
+      </div>
+
+      <div class="form-group">
+        {{ form.password.label() }}
+        {{ form.password() }}
+        {% for error in form.password.errors %}
+        <span class="input-error">{{ error }}</span>
+        {% endfor %}
+      </div>
+
+      <div class="form-group">
+        {{ form.password2.label() }}
+        {{ form.password2() }}
+        {% for error in form.password2.errors %}
+        <span class="input-error">{{ error }}</span>
+        {% endfor %}
+      </div>
+
+      <button class="form-submit-btn">Sign Up</button>
+    </form>
+  </div>
+  <div class="footer">
+    <div class="footer-box">
+      <span>Already have an account?</span> <a href="signin">Login</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="../static/css/signup.css" type="text/css">
+{% endblock %}
